@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Game Of Chess</title>
+
+    <link href="./dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="chess.css">
+    <script defer src="chess_app.js"></script>
+    <script defer src="chess_pieces.js"></script>
+</head>
+<body class="m-0 p-0">
+    <section class="chessboard_wrapper">
+        <div id="chessboard" class="mx-auto  max-w-4xl justify-center py-10 px-5 items-center">
+            <div class="row_8">
+                <section class="piece_board font-semibold grid grid-cols-8 max-w-4xl">
+                    <div id="a8" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        a8
+                    </div>
+                    <div id="b8" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        b8
+                    </div>
+                    <div id="c8" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        c8
+                    </div>
+                    <div id="d8" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        d8
+                    </div>
+                    <div id="e8" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        e8
+                    </div>
+                    <div id="f8" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        f8
+                    </div>
+                    <div id="g8" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        g8
+                    </div>
+                    <div id="h8" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        h8
+                    </div>
+                </section>
+            </div>
+            <div class="row_7">
+                <section class="piece_board font-semibold grid grid-cols-8 max-w-4xl">
+                    <div id="a7" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        a7
+                    </div>
+                    <div id="b7" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        b7
+                    </div>
+                    <div id="c7" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        c7
+                    </div>
+                    <div id="d7" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        d7
+                    </div>
+                    <div id="e7" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        e7
+                    </div>
+                    <div id="f7" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        f7
+                    </div>
+                    <div id="g7" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        g7
+                    </div>
+                    <div id="h7" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        h7
+                    </div>
+                </section>
+            </div>
+            <div class="row_6">
+                <section class="piece_board font-semibold grid grid-cols-8 max-w-4xl">
+                    <div id="a6" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        a6
+                    </div>
+                    <div id="b6" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        b6
+                    </div>
+                    <div id="c6" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        c6
+                    </div>
+                    <div id="d6" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        d6
+                    </div>
+                    <div id="e6" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        e6
+                    </div>
+                    <div id="f6" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        f6
+                    </div>
+                    <div id="g6" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        g6
+                    </div>
+                    <div id="h6" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        h6
+                    </div>
+                </section>
+            </div>
+            <div class="row_5">
+                <section class="piece_board font-semibold grid grid-cols-8 max-w-4xl">
+                    <div id="a5" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        a5
+                    </div>
+                    <div id="b5" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        b5
+                    </div>
+                    <div id="c5" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        c5
+                    </div>
+                    <div id="d5" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        d5
+                    </div>
+                    <div id="e5" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        e5
+                    </div>
+                    <div id="f5" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        f5
+                    </div>
+                    <div id="g5" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        g5
+                    </div>
+                    <div id="h5" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        h5
+                    </div>
+                </section>
+            </div>
+            <div class="row_4">
+                <section class="piece_board font-semibold grid grid-cols-8 max-w-4xl">
+                    <div id="a4" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        a4
+                    </div>
+                    <div id="b4" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        b4
+                    </div>
+                    <div id="c4" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        c4
+                    </div>
+                    <div id="d4" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        d4
+                    </div>
+                    <div id="e4" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        e4
+                    </div>
+                    <div id="f4" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        f4
+                    </div>
+                    <div id="g4" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        g4
+                    </div>
+                    <div id="h4" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        h4
+                    </div>
+                </section>
+            </div>
+            <div class="row_3">
+                <section class="piece_board font-semibold grid grid-cols-8 max-w-4xl">
+                    <div id="a3" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        a3
+                    </div>
+                    <div id="b3" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        b3
+                    </div>
+                    <div id="c3" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        c3
+                    </div>
+                    <div id="d3" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        d3
+                    </div>
+                    <div id="e3" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        e3
+                    </div>
+                    <div id="f3" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        f3
+                    </div>
+                    <div id="g3" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                        g3
+                    </div>
+                    <div id="h3" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                        h3
+                    </div>
+                </section>
+                <div class="row_2">
+                    <section class="piece_board font-semibold grid grid-cols-8 max-w-4xl">
+                        <div id="a2" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                            a2
+                        </div>
+                        <div id="b2" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                            b2
+                        </div>
+                        <div id="c2" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                            c2
+                        </div>
+                        <div id="d2" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                            d2
+                        </div>
+                        <div id="e2" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                            e2
+                        </div>
+                        <div id="f2" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                            f2
+                        </div>
+                        <div id="g2" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                            g2
+                        </div>
+                        <div id="h2" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                            h2
+                        </div>
+                    </section>
+                </div>
+                <div class="row_1">
+                    <section class="piece_board font-semibold grid grid-cols-8 max-w-4xl">
+                        <div id="a1" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                            a1
+                        </div>
+                        <div id="b1" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                            b1
+                        </div>
+                        <div id="c1" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                            c1
+                        </div>
+                        <div id="d1" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                            d1
+                        </div>
+                        <div id="e1" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                            e1
+                        </div>
+                        <div id="f1" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                            f1
+                        </div>
+                        <div id="g1" class="chess-square border-2 border-black bg-orange-800 w-full h-28">
+                            g1
+                        </div>
+                        <div id="h1" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
+                            h1
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+</body>
+</html>
