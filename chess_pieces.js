@@ -10,9 +10,54 @@ class Pawn extends ChessPieces {
     constructor(color, position){
         super('Pawn', color, position)
         this.image = `${color}_pawn.svg`
+        this.firstMove = true
     }
 
-    move() {
+    canMoveTo(newPosition) {
+
+        // to identify the column and row position of a piece --
+        // if a pawn is at e2, the column is 0 and the row is 1 (e === 0, 2 === 1). List indexing. 
+
+        // Keeping with the theme of e2 being the current this.positon of a pawn
+        // const currentColumn extracts the position of 'e' from 'e2' and stores it as the currentColumn
+        // const currentRow extracts the position of '2' from 'e2' and stores it as the currentRow
+
+
+        const currentColumn = this.position.charAt(0) 
+        const currentRow = this.position.charAt(1)
+        
+
+        console.log(currentRow)
+
+        // COLUMS REPRESNT LETTERS AND ROWS REPRESENT THE NUMERICAL VALUES!!!! (going crazy)
+
+    
+
+        // gets the column of the pawns current position
+        const newColum = newPosition.charAt(0) // gets the column of the pawns new position
+        const newRow = newPosition.charAt(1); // gets the row of the pawns new position
+        
+
+        if (this.color === "white") {
+            if (this.firstMove && newRow === String.fromCharCode(currentRow.charCodeAt(0) + 2) && currentColumn === newColum) {
+                return true // Checks if the pawn has been moved before and if it was been moved two squares up the board
+            }
+            if (newRow === String.fromCharCode(currentRow.charCodeAt(0) + 1) && currentColumn === newColum) {
+                return true // Regular one square up the board conditional check
+            } 
+            // black pawn checker
+        } else  {
+            if (this.firstMove && newRow === String.fromCharCode(currentRow.charCodeAt(0) - 2) && currentColumn === newColum) {
+                return true // Checks if the pawn has been moved before and if it was been moved two squares up the board
+            }
+            if (newRow === String.fromCharCode(currentRow.charCodeAt(0) - 1) && currentColumn === newColum) {
+                return true // Regular one square up the board conditional check
+            } 
+        }
+
+        return false
+
+
 
     }
 

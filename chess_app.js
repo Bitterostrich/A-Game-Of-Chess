@@ -13,17 +13,11 @@ class ChessGame {
     renderPieces() {
     chessPieces.forEach(piece => {
 
-    console.log("renderPieces function is being called");
-
-    console.log("Piece:", piece);
-
-    const square = document.getElementById(piece.position);
-    const img = document.createElement('img');
-    img.src = `./assets/${piece.image}`
-                
-    console.log(img.src)
-    img.classList.add('chess-piece')
-    square.appendChild(img)
+        const square = document.getElementById(piece.position);
+        const img = document.createElement('img');
+        img.src = `./assets/${piece.image}`
+        img.classList.add('chess-piece')
+        square.appendChild(img)
             
 });
     }
