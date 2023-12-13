@@ -3,6 +3,7 @@ import chessPieces from './chess_pieces.js';
 class ChessGame {
     constructor() {
         this.chessPieces = chessPieces
+        this.selectedPieces = null
     }
 
     initialize() {
@@ -23,11 +24,6 @@ class ChessGame {
     }
 
 }
-
-
-
-
-
 
 
 document.addEventListener('DOMContentLoaded', () => {
