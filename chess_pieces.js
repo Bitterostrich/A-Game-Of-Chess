@@ -8,7 +8,8 @@ class ChessPieces {
 
 class Pawn extends ChessPieces {
     constructor(color, position){
-        super('Pawn', color, position) 
+        super('Pawn', color, position)
+        this.image = `${color}_pawn.svg`
     }
 
     move() {
@@ -22,7 +23,8 @@ class Pawn extends ChessPieces {
 
 class Rook extends ChessPieces {
     constructor(color, position){
-        super('Rook', color, position) 
+        super('Rook', color, position)
+        this.image = `${color}_rook.svg`
         
     }
 
@@ -37,7 +39,8 @@ class Rook extends ChessPieces {
 
 class Bishop extends ChessPieces {
     constructor(color, position){
-        super('Bishop', color, position) 
+        super('Bishop', color, position)
+        this.image = `${color}_bishop.svg`
         
     }
 
@@ -53,7 +56,8 @@ class Bishop extends ChessPieces {
 
 class Knight extends ChessPieces {
     constructor(color, position){
-        super('Knight', color, position) 
+        super('Knight', color, position)
+        this.image = `${color}_knight.svg`
         
     }
 
@@ -69,7 +73,8 @@ class Knight extends ChessPieces {
 
 class Queen extends ChessPieces {
     constructor(color, position){
-        super('Queen', color, position) 
+        super('Queen', color, position)
+        this.image = `${color}_queen.svg`
         
     }
 
@@ -85,7 +90,8 @@ class Queen extends ChessPieces {
 
 class King extends ChessPieces {
     constructor(color, position){
-        super('King', color, position) 
+        super('King', color, position)
+        this.image = `${color}_king.svg`
         
     }
     

@@ -3,8 +3,6 @@
 @tailwind utilities; 
 
 
-
-
 .grid-rows-8 {
     grid-template-rows: repeat(8, minmax(0, 1fr));
 }
@@ -15,4 +13,10 @@
 
 #chessboard {
     width: 100%;
+}
+
+.chess-piece {
+    width: 100%;
+    height: auto;
+    display: block;
 }
