@@ -7,12 +7,12 @@
 
     <link href="./dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="chess.css">
-    <script defer src="chess_app.js"></script>
-    <script defer src="chess_pieces.js"></script>
+
+   
 </head>
-<body class="m-0 p-0">
+<body class="m-0 p-0 overflow-hidden">
     <section class="chessboard_wrapper">
-        <div id="chessboard" class="mx-auto  max-w-4xl justify-center py-10 px-5 items-center">
+        <div id="chessboard" class="mx-auto  max-w-4xl justify-center py-6 px-10 items-center">
             <div class="row_8">
                 <section class="piece_board font-semibold grid grid-cols-8 max-w-4xl">
                     <div id="a8" class="chess-square border-2 border-black bg-orange-200 w-full h-28">
@@ -241,6 +241,8 @@
         </div>
     </section>
 
+<script type="module" src="chess_pieces.js"></script>
+<script type="module" src="chess_app.js"></script>
 
 </body>
 </html>

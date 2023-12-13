@@ -1,11 +1,37 @@
-const chessBoard = document.querySelector("#chessboard")
+import chessPieces from './chess_pieces.js';
 
-const playerDisplay = document.querySelector("#player")
-
-const infoDisplay = document.querySelector("#info-display")
-
-class Chess {
-    constructor(board, ) {
-        this.board = board 
+class ChessGame {
+    constructor() {
+        this.chessPieces = chessPieces
     }
+
+    initialize() {
+        this.renderPieces();
+        this.setupEventListeners()
+    }
+
+    renderPieces() {
+    chessPieces.forEach(piece => {
+
+        const square = document.getElementById(piece.position);
+        const img = document.createElement('img');
+        img.src = `./assets/${piece.image}`
+        img.classList.add('chess-piece')
+        square.appendChild(img)
+            
+});
+    }
+
 }
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const chessGame = new ChessGame()
+    chessGame.initialize();
+    
+})
