@@ -23,7 +23,7 @@ class Pawn extends ChessPieces {
         // const currentRow extracts the position of '2' from 'e2' and stores it as the currentRow
 
 
-        const currentColumn = this.position.charAt(0) 
+        const currentColumn = this.position.charAt(0)
         const currentRow = this.position.charAt(1)
         
 

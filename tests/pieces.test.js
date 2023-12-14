@@ -10,5 +10,10 @@ describe('Pawn movement', () => {
         expect(pawn.canMoveTo('e3')).toBe(true);
     });
 
+    test("White pawn can move forward two squares on first move", () => {
+        const pawn = new Pawn('white', 'e2');
+        expect(pawn.canMoveTo('e4')).toBe(true)
+    })
+
 
 })
