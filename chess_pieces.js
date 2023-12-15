@@ -23,37 +23,46 @@ class Pawn extends ChessPieces {
         // const currentRow extracts the position of '2' from 'e2' and stores it as the currentRow
 
 
-        const currentColumn = this.position.charAt(0)
-        const currentRow = this.position.charAt(1)
+        const currentColumn = this.position.charCodeAt(0)
+
+        console.log('The current column is:', currentColumn)
+
+        const currentRow = this.position.charCodeAt(1)
         
 
-        console.log(currentRow)
+        console.log('The current row is:', currentRow)
 
         // COLUMS REPRESNT LETTERS AND ROWS REPRESENT THE NUMERICAL VALUES!!!! (going crazy)
 
     
 
         // gets the column of the pawns current position
-        const newColum = newPosition.charAt(0) // gets the column of the pawns new position
-        const newRow = newPosition.charAt(1); // gets the row of the pawns new position
-        
+        const newColumn = newPosition.charCodeAt(0) // gets the column of the pawns new position
+        console.log('The new column is:', newColumn)
+
+        const newRow = newPosition.charCodeAt(1); // gets the row of the pawns new position
+        console.log('The new row is:', newRow)
 
         if (this.color === "white") {
-            if (this.firstMove && newRow === String.fromCharCode(currentRow.charCodeAt(0) + 2) && currentColumn === newColum) {
+            if (this.firstMove && newRow === currentRow + 2 && currentColumn === newColumn) {
+                this.firstMove = false // sets first move to false. 
                 return true // Checks if the pawn has been moved before and if it was been moved two squares up the board
             }
-            if (newRow === String.fromCharCode(currentRow.charCodeAt(0) + 1) && currentColumn === newColum) {
+            if (newRow === currentRow + 1 && currentColumn === newColumn) {
+                this.firstMove = false
                 return true // Regular one square up the board conditional check
             } 
             // black pawn checker
         } else  {
-            if (this.firstMove && newRow === String.fromCharCode(currentRow.charCodeAt(0) - 2) && currentColumn === newColum) {
+            if (this.firstMove && newRow === currentRow - 2 && currentColumn === newColumn) {
+                this.firstMove = false
                 return true // Checks if the pawn has been moved before and if it was been moved two squares up the board
             }
-            if (newRow === String.fromCharCode(currentRow.charCodeAt(0) - 1) && currentColumn === newColum) {
+            if (newRow === currentRow - 1 && currentColumn === newColumn) {
+                this.firstMove = false
                 return true // Regular one square up the board conditional check
             } 
-        }
+        } 
 
         return false
 
@@ -61,8 +70,24 @@ class Pawn extends ChessPieces {
 
     }
 
-    capture() {
+    canCapture(newPosition, getPieceAt) { 
 
+        const currentColumn = this.position.charCodeAt(0) // retrieves the position of the column i.e a,b,c,d,e,f,g or h. 
+        const currentRow = this.position.charCodeAt(1) // retrives the row number (1-8) and stores it. The 
+
+        const newColumn = newPosition.charCodeAt(0)
+        const newRow = newPosition.charCodeAt(1)
+
+        
+        if (Math.abs(currentColumn - newColumn) === 1) {
+            if (this.color === "white" && newRow === currentRow + 1 || this.color === "black" && newRow === currentRow - 1)
+                 {
+                    const targetPiece = getPieceAt(newPosition);
+                    console.log(targetPiece)
+                    return targetPiece && targetPiece.color !== this.color
+                }
+        }
+        return false
     }
 }
 
@@ -173,13 +198,13 @@ let blackKing = [new King('black', 'e8')]
 let whitePawns = [new Pawn('white', 'a2'), new Pawn('white', 'b2'), new Pawn('white', 'c2'), new Pawn('white', 'd2'), new Pawn('white', 'e2'), new Pawn('white', 'f2'), new Pawn('white', 'g2'), new Pawn('white', 'h2')]
 let blackPawns = [new Pawn('black', 'a7'), new Pawn('black', 'b7'), new Pawn('black', 'c7'), new Pawn('black', 'd7'), new Pawn('black', 'e7'), new Pawn('black', 'f7'), new Pawn('black', 'g7'), new Pawn('black', 'h7')]
 
-export { Pawn, Rook, Bishop, Knight, Queen, King };
+
 
 let chessPieces = [
     ...whiteRooks, ...whiteKnights, ...whiteBishops, ...whiteQueen, ...whiteKing, ...whitePawns,
     ...blackRooks, ...blackBishops, ...blackKnights, ...blackQueen, ...blackKing, ...blackPawns
 ]
 
-
+export { Pawn, Rook, Bishop, Knight, Queen, King };
 
 export default chessPieces;
