@@ -181,7 +181,38 @@ class Bishop extends ChessPieces {
 
     
     canMoveTo(newPosition, getPieceAt, lastMove) {
+    
+        const currentColumn = this.position.charCodeAt(0)
+        const currentRow = this.position.charCodeAt(1)
 
+        const newColumn = newPosition.charCodeAt(0)
+        const newRow = newPosition.charCodeAt(1)
+
+        const targetPiece = getPieceAt(newPosition)
+
+        if (targetPiece) {
+            return false
+        }
+
+        if (Math.abs(newColumn - currentColumn) !== Math.abs(newRow - currentRow)) {
+            return false
+        }
+
+        const columnStep = newColumn > currentColumn ? 1 : -1;
+        const rowStep = newRow > currentRow ? 1 : -1 
+
+        let checkColumn = currentColumn + columnStep
+        let checkRow = currentRow + rowStep
+
+        while (checkColumn !== newColumn && checkRow !== newRow) {
+            const checkPosition = checkColumn + checkRow;
+            if(getPieceAt(checkPosition)) {
+                return false 
+            }
+            checkColumn += columnStep
+            checkRow += rowStep
+        }
+        return true
 
     }
 
