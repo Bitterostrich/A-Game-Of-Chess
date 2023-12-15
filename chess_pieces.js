@@ -53,9 +53,9 @@ class Pawn extends ChessPieces {
             return false
         }
 
-        if (this.isEnpassantMove(newPosition, lastMove)) {
-            return true
-        }
+        // if (this.isEnpassantMove(newPosition, lastMove)) {
+        //     return true
+        // }
 
         if (this.color === "white") {
             if (this.firstMove && newRow === currentRow + 2 && currentColumn === newColumn) {
@@ -180,7 +180,8 @@ class Bishop extends ChessPieces {
     }
 
     
-    move() {
+    canMoveTo(newPosition, getPieceAt, lastMove) {
+
 
     }
 
