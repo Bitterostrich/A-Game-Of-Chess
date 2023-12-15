@@ -54,7 +54,7 @@ class Pawn extends ChessPieces {
         }
 
         // if (this.isEnpassantMove(newPosition, lastMove)) {
-        //     return true
+        //     return true //
         // }
 
         if (this.color === "white") {
